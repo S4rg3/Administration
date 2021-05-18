@@ -1,0 +1,14 @@
+Main Import when using PowerShell with Office 365
+O365connect  - this will connect to the tenancy using the admin credentials 
+O365disconnect - this will disconnect the current sessions (Important at the end of the task)
+
+
+
+Exporting a distribution list to CSV
+
+$DGName = "Distribution List Name"
+Get-DistributionGroupMember -Identity $DGName | Select Name, PrimarySMTPAddress |
+Export-CSV "C:\Distribution-List-Members.csv" -NoTypeInformation -Encoding UTF8
+
+
+
