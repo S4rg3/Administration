@@ -12,3 +12,14 @@ Export-CSV "C:\Distribution-List-Members.csv" -NoTypeInformation -Encoding UTF8
 
 
 
+Turning off Auto Mapping
+
+-When the user needs to permissions to the mailbox but would not want to have this auto mapped to the mailbox
+
+Add-MailboxPermission -Identity <Mailbox ID1> -User <Mailbox ID2> -AccessRights FullAccess -AutoMapping:$false
+
+
+
+Checking disks on server for name and serial number 
+
+Get-PhysicalDisk | Select -Prop DeviceId,FriendlyName,SerialNumber
